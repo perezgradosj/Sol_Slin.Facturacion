@@ -1,0 +1,4 @@
+IdEstado;IdPerfil;Nombres;ApePaterno;ApeMaterno;Dni;Dirección;Telefono;Email;Username;Password;FechaExpiracion;Guardar(1/0);Modificar(2/0);Buscar(3/0);Exportar(4/0);Enviar(6/0)
+1;15;name1;apepaterno1;apematerno1;10000001;direccion1;999999999;name1@gmail.com;user1;clave1;31/12/2030;1;2;3;4;6
+1;16;name2;apepaterno2;apematerno2;10000002;direccion2;988888888;name2@gmail.com;user2;clave2;31/12/2030;1;0;0;4;6
+1;17;name3;apepaterno3;apematerno3;10000003;direccion3;977777777;name3@gmail.com;user3;clave3;31/12/2030;0;2;3;0;0

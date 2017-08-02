@@ -1,0 +1,98 @@
+<Services>
+  <Service>
+    <Type>WS</Type>
+    <Name>smc</Name>
+    <Description>Servicio de Envio de Documentos Electronicos a una Cuenta de Correo.</Description>
+    <Description_Res>Envio de Documentos Electronicos</Description_Res>   
+    <Path_Exe>\SLIN-ADE\_ADE\smc\bin\Slin.Facturacion.WS_SendMailDoc.exe</Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>WS</Type>
+    <Name>smd</Name>
+    <Description>Servicio de descarga de Documentos desde una Cuenta de Correo.</Description>
+    <Description_Res>Descarga de Documentos Electronicos Recibidos</Description_Res>
+    <Path_Exe>\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.WS_FileDown.exe</Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>WS</Type>
+    <Name>smp</Name>
+    <Description>Servicio de Impresion de Documentos Electronicos.</Description>
+    <Description_Res>Impresion de Documentos Electronicos</Description_Res>
+    <Path_Exe>\SLIN-ADE\_ADE\smp\bin\Slin.Facturacion.WS_PrintDoc.exe</Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>WS</Type>
+    <Name>env</Name>
+    <Description>Servicio de envio de xml a SUNAT.</Description>
+    <Description_Res>Envio de Documentos Electronicos SUNAT</Description_Res>
+    <Path_Exe>\SLIN-ADE\_ADE\env\ADE.Services.SunatDelivery.exe</Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>WS</Type>
+    <Name>res</Name>
+    <Description>Servicio que genera y envia Resumenes Electronicos.</Description>
+    <Description_Res>Generacion de Resumenes de Boletas, Bajas y Reversiones</Description_Res>
+    <Path_Exe>\SLIN-ADE\_ADE\res\ADE.Services.SummaryDelivery.exe</Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>WS</Type>
+    <Name>svc</Name>
+    <Description>Servicio de Generacion de Documentos Electronicos.</Description>
+    <Description_Res>Monitoreo de Facturacion Electronica</Description_Res>
+    <Path_Exe>\SLIN-ADE\_ADE\svc\ADE.Services.Monitor.exe</Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>WS</Type>
+    <Name>ser</Name>
+    <Description>Servicio de Registro de Tipo de Cambio.</Description>
+    <Description_Res>Registro de Tipo de Cambio</Description_Res>
+    <Path_Exe>\SLIN-ADE\ACRONIMO\Procesos\ser\Slin.Facturacion.ExchangeRate.exe</Path_Exe>
+    <Hability>2</Hability>
+  </Service>
+  <Service>
+    <Type>APP</Type>
+    <Name>slinade</Name>
+    <Description>Monitor SLIN ADE</Description>
+    <Description_Res></Description_Res>
+    <Path_Exe></Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>APP</Type>
+    <Name>serviceade</Name>
+    <Description>WCF Servicios del Monitor SLIN ADE</Description>
+    <Description_Res></Description_Res>
+    <Path_Exe></Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>APP</Type>
+    <Name>serviceinterface</Name>
+    <Description>Web Service de Interface (recepcion de documentos en formato xml)</Description>
+    <Description_Res></Description_Res>
+    <Path_Exe></Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>APP</Type>
+    <Name>serviceconsult</Name>
+    <Description>Web Service de Consulta de Documentos (Devuelve Estado, PDF, o asu vez XML de Doc. en consulta)</Description>
+    <Description_Res></Description_Res>
+    <Path_Exe></Path_Exe>
+    <Hability>1</Hability>
+  </Service>
+  <Service>
+    <Type>APP</Type>
+    <Name>serviceresumen</Name>
+    <Description>Servicio de generacion de resumenes desde el monitor de SLIN ADE.</Description>
+    <Description_Res></Description_Res>
+    <Path_Exe></Path_Exe>
+    <Hability>2</Hability>
+  </Service>
+</Services>

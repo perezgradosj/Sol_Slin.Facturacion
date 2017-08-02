@@ -1,0 +1,63 @@
+﻿.tablenyx tr > th {
+    /*background: #eb8c00;*/
+    background: #3b3d51 !important;
+    height: 35px;
+    align-content: flex-end !important;
+    /*border-color: #eb8c00;*/
+    border-color: #3b3d51 !important;
+    font-size: small;
+    font-weight: bolder;
+}
+
+.tablenyx {
+    border-color: #808080 !important;
+    width: 593px;
+    /*height: 190px;*/
+    height: 130px;
+}
+
+.tablenyx tr > td {
+
+}
+
+
+
+
+
+
+
+.tablenyx_2 tr > th {
+    /*background: #eb8c00;*/
+    background: #3b3d51 !important;
+    height: 35px;
+    align-content: flex-end !important;
+    /*border-color: #eb8c00;*/
+    border-color: #3b3d51;
+    font-size: small;
+    font-weight: bolder;
+}
+
+.tablenyx_2 {
+    border-color: #808080 !important;
+    width: 593px;
+    height: 130px;
+}
+
+
+
+.tablenyx_3 tr > th {
+    /*background: #eb8c00;*/
+    background: #3b3d51 !important;
+    height: 35px;
+    align-content: flex-end !important;
+    /*border-color: #eb8c00;*/
+    border-color: #3b3d51;
+    font-size: small;
+    font-weight: bolder;
+}
+
+.tablenyx_3 {
+    border-color: #808080 !important;
+    width: 593px;
+    height: 40px;
+}

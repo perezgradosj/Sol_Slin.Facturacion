@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7A2D1E6-5F1D-48B8-A728-476F5B8F6CEE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slin.Facturacion.Common</RootNamespace>
+    <AssemblyName>Slin.Facturacion.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\..\Client\Library.Desktop\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DriveInfoEx">
+      <HintPath>..\..\Client\Library.Desktop\DriveInfoEx.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\Client\Library.Desktop\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePage.cs" />
+    <Compile Include="CENC\XmlNotaCredito.cs" />
+    <Compile Include="CEND\XmlNotaDebito.cs" />
+    <Compile Include="Constantes.cs" />
+    <Compile Include="ConvertorNum.cs" />
+    <Compile Include="Equivalentes.cs" />
+    <Compile Include="Helper\BarcodeClass.cs" />
+    <Compile Include="Helper\DocumentSend.cs" />
+    <Compile Include="Helper\DocumentState.cs" />
+    <Compile Include="Helper\DocumenType.cs" />
+    <Compile Include="Helper\Encrypt.cs" />
+    <Compile Include="Helper\ListClass.cs" />
+    <Compile Include="Helper\RolClass.cs" />
+    <Compile Include="Method\RefactoryClass.cs" />
+    <Compile Include="Method\Singleton.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CE\XmlFactura.cs" />
+    <Compile Include="CRE\XmlRetencion.cs" />
+    <Compile Include="Setup\SetupPrivate.cs" />
+    <Compile Include="UtilCE\ParametersClassWS.cs" />
+    <Compile Include="UtilCE\UsefullClassWS.cs" />
+    <Compile Include="Util\ParametersClass.cs" />
+    <Compile Include="Util\UsefullClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Serializer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Source\Business Logic\Slin.Facturacion.BusinessEntities\Slin.Facturacion.BusinessEntities.csproj">
+      <Project>{752aa712-0ffd-4cc8-b0e9-b88244e4ff19}</Project>
+      <Name>Slin.Facturacion.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slin.Facturacion.Proxies\Slin.Facturacion.Proxies.csproj">
+      <Project>{879ebe2b-4cda-467c-b4e7-c16e696e7062}</Project>
+      <Name>Slin.Facturacion.Proxies</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slin.Facturacion.ServiceController\Slin.Facturacion.ServiceController.csproj">
+      <Project>{62e3657a-71ff-4922-8b04-28773e5b66b7}</Project>
+      <Name>Slin.Facturacion.ServiceController</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

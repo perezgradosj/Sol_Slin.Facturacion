@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{253EDFA2-4097-40B8-8377-907A68DA722B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slin.Facturacion.DataInterfaceXml</RootNamespace>
+    <AssemblyName>Slin.Facturacion.DataInterfaceXml</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CEN\InterfaceXmlCENOTS.cs" />
+    <Compile Include="CE\InterfaceXmlCE.cs" />
+    <Compile Include="CRE\InterfaceXmlCRE.cs" />
+    <Compile Include="Helper\Encrypt.cs" />
+    <Compile Include="LOW\DocumentHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialize\DocumentVoided.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BD\" />
+    <Folder Include="CECN\" />
+    <Folder Include="CPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Slin.Facturacion.BusinessSecurity\Slin.Facturacion.BusinessSecurity.csproj">
+      <Project>{137ea43c-42af-43da-9e59-7a6ff9574613}</Project>
+      <Name>Slin.Facturacion.BusinessSecurity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Slin.Facturacion.Common\Slin.Facturacion.Common.csproj">
+      <Project>{E7A2D1E6-5F1D-48B8-A728-476F5B8F6CEE}</Project>
+      <Name>Slin.Facturacion.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Business Logic\Slin.Facturacion.BusinessEntities\Slin.Facturacion.BusinessEntities.csproj">
+      <Project>{752aa712-0ffd-4cc8-b0e9-b88244e4ff19}</Project>
+      <Name>Slin.Facturacion.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Service Interface\Slin.Facturacion.ServiceImplementation\Slin.Facturacion.ServiceImplementation.csproj">
+      <Project>{6dff489e-878f-4d3b-a6fb-fef51d638f97}</Project>
+      <Name>Slin.Facturacion.ServiceImplementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slin.Facturacion.DataAccess\Slin.Facturacion.DataAccess.csproj">
+      <Project>{28FA6B1F-9F51-4954-927C-57927BDC7AF8}</Project>
+      <Name>Slin.Facturacion.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

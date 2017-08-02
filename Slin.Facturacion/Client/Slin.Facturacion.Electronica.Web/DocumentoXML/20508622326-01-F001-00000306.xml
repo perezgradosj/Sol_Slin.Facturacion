@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Invoice xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+	<ext:UBLExtensions>
+		<ext:UBLExtension>
+			<ext:ExtensionContent><AdditionalInformationSLIN><Document><ID>20508622326-01-F001-00000306</ID></Document><Extra><ExLinea>1</ExLinea><ExDato>Banco Scotiabank*b*Banco Interbank</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>2</ExLinea><ExDato>000-6740006*b*127-3001260130</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>3</ExLinea><ExDato>000-2573623*b*127-3001260156</ExDato><ExTipo></ExTipo></Extra></AdditionalInformationSLIN></ext:ExtensionContent>
+		</ext:UBLExtension>
+		<ext:UBLExtension>
+			<ext:ExtensionContent><sac:AdditionalInformation><sac:AdditionalMonetaryTotal><cbc:ID>1001</cbc:ID><cbc:PayableAmount currencyID="USD">220.00</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalMonetaryTotal><cbc:ID>1002</cbc:ID><cbc:PayableAmount currencyID="USD">0.00</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalMonetaryTotal><cbc:ID>1003</cbc:ID><cbc:PayableAmount currencyID="USD">0.00</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalMonetaryTotal><cbc:ID>2003</cbc:ID><cbc:PayableAmount currencyID="USD">25.38</cbc:PayableAmount><cbc:Percent>10.00</cbc:Percent></sac:AdditionalMonetaryTotal><sac:AdditionalProperty><cbc:ID>1000</cbc:ID><cbc:Value>DOSCIENTOS CINCUENTA Y NUEVE Y 60/100 DOLARES AMERICANOS</cbc:Value></sac:AdditionalProperty><sac:AdditionalProperty><cbc:ID>3000</cbc:ID><cbc:Value>22</cbc:Value></sac:AdditionalProperty><sac:AdditionalProperty><cbc:ID>3001</cbc:ID><cbc:Value>123123</cbc:Value></sac:AdditionalProperty><sac:SUNATTransaction><cbc:ID>01</cbc:ID></sac:SUNATTransaction></sac:AdditionalInformation></ext:ExtensionContent>
+		</ext:UBLExtension>
+		<ext:UBLExtension>
+			<ext:ExtensionContent><ds:Signature Id="SignatureSP"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>SFtCBCh9y+FdXjmXBTJtyRqKIQA=</DigestValue></Reference></SignedInfo><SignatureValue xmlns="http://www.w3.org/2000/09/xmldsig#">S1f7rXyOcFNj9KeVW2pGC8Jpzuf6Uwj93HuNM8/zA0RphMdGSyikhk7lnAi6/iDYUsdwfdr0kkXnmrU6dLRr8qNG8dW1W2Rpn0/ZUIKX0Cly6UlVeFEsJDj/BRROzPX5P8EKS+8R5QtT7hdfAdtwnkHHw588B5bbEwFVNNR4JghBDdw0vBj+hZg0bhyqxU4D8NjWLyoc+XsXom9ye8wfAwjm9tKA+2MXHkqrChzlv4TWEhRFlaELWsKm6aQc1RvnZofQRfIc6vaMiyzl/YeX9jsXJF+vyRLQNS4fVryYV+QPBm7OoW9SZgCb1w9OQ6n4PTOagxtTLnrg30EFq5PKQQ==</SignatureValue><KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><X509Data><X509SubjectName>CN=CORPORACION SLIN S.A.C + E=jpuma@slin.com.pe, OU=RUC: 20508622326, O=Corporacion Slin S.A.C, L=Lima, C=PE</X509SubjectName><X509Certificate>MIIFTjCCBDagAwIBAgIQKCE2+Hc4PlQAAAAATDUtnTANBgkqhkiG9w0BAQsFADCBpTELMAkGA1UEBhMCVVMxFjAUBgNVBAoTDUVudHJ1c3QsIEluYy4xOTA3BgNVBAsTMHd3dy5lbnRydXN0Lm5ldC9DUFMgaXMgaW5jb3Jwb3JhdGVkIGJ5IHJlZmVyZW5jZTEfMB0GA1UECxMWKGMpIDIwMTAgRW50cnVzdCwgSW5jLjEiMCAGA1UEAxMZRW50cnVzdCBDbGFzcyAyIENsaWVudCBDQTAeFw0xNjA1MDYxODA1MDdaFw0xNzA1MDQxODM1MDVaMIGZMQswCQYDVQQGEwJQRTENMAsGA1UEBxMETGltYTEfMB0GA1UEChMWQ29ycG9yYWNpb24gU2xpbiBTLkEuQzEZMBcGA1UECxMQUlVDOiAyMDUwODYyMjMyNjE/MB0GA1UEAxMWQ09SUE9SQUNJT04gU0xJTiBTLkEuQzAeBgkqhkiG9w0BCQEWEWpwdW1hQHNsaW4uY29tLnBlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuSYdD14a4QpN9M7PAqLdtb1ptNLL1srCIolqkXB0q8dxuOsa5Ca5/f8rfiYv+7pFyVve5p4oxj4mdzv3aHuu63KUhBeaDeHrRSPL+bugVxbhMDwGUSsPkpn0IFBHTSowWLPBjeFrveXu0BtSGw2+JPan+quPOMf6AwKTkxCYJd6gGCnlgvdo8pXBqDMG8DQTrOvhoi73Tlm0cCARdreQ2mISEFcM3H0Jef/okasj9Z4QoywtzXapd8n3TJA7VjJG77vdVv9IwzKE5ME69ZnzDax6+nd0/83g87fhhmFESfxPoegJeTsfbwyCDLaJMdEb2XByQRqwqUGx75Twn/lxVwIDAQABo4IBgjCCAX4wDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDBCBgNVHSAEOzA5MDcGC2CGSAGG+mwKAQQCMCgwJgYIKwYBBQUHAgEWGmh0dHA6Ly93d3cuZW50cnVzdC5uZXQvcnBhMGoGCCsGAQUFBwEBBF4wXDAjBggrBgEFBQcwAYYXaHR0cDovL29jc3AuZW50cnVzdC5uZXQwNQYIKwYBBQUHMAKGKWh0dHA6Ly9haWEuZW50cnVzdC5uZXQvMjA0OGNsYXNzMnNoYTIuY2VyMDQGA1UdHwQtMCswKaAnoCWGI2h0dHA6Ly9jcmwuZW50cnVzdC5uZXQvY2xhc3MyY2EuY3JsMBwGA1UdEQQVMBOBEWpwdW1hQHNsaW4uY29tLnBlMB8GA1UdIwQYMBaAFAmRpbrp8i4qdd/Nfv53yvLea5skMB0GA1UdDgQWBBTn/FlQfVj4gd3kysbX7MelA1NCdjAJBgNVHRMEAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQA77W6stzsIsEn5DCtU88dWFSdx3JquArvSCzDQah2p9LsQ2zHqHqhrA0tX6XtepcPPK4gLTh46iJAcVfQD+rWMPCqwcTXCvUf4Tmta6tpTmE0061qFL7bS68RqkJQAo4/OnJeTi49xi1yGNb2cKJ5LeQ2r0Laxdgos+Ms4KrAWjC3rDTywZVsDvmFAyVZ9xtLB3BhGJQtcSt24Fgk/tCzaYfDoGUhsvUkxx0CDU9WxKb2pmpDBw4X/rIVyQsKUQIV4ccOjLbXgbLwgY6OzquwC3ngxTREvFMEY2UqFUW1sAf0M3lOc+2evo9T7AfvNC4N6Djf3Lg7Fyl7qdubOgekF</X509Certificate></X509Data></KeyInfo></ds:Signature></ext:ExtensionContent>
+		</ext:UBLExtension>
+	</ext:UBLExtensions>
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+	<cbc:CustomizationID>1.0</cbc:CustomizationID>
+	<cbc:ID>F001-00000306</cbc:ID>
+	<cbc:IssueDate>2017-05-05</cbc:IssueDate>
+	<cbc:InvoiceTypeCode>01</cbc:InvoiceTypeCode>
+	<cbc:DocumentCurrencyCode>USD</cbc:DocumentCurrencyCode>
+	<cac:Signature>
+		<cbc:ID>IDSign20508622326</cbc:ID>
+		<cac:SignatoryParty>
+			<cac:PartyIdentification>
+				<cbc:ID>20508622326</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name><![CDATA[CORPORACION SLIN SAC]]></cbc:Name>
+			</cac:PartyName>
+		</cac:SignatoryParty>
+		<cac:DigitalSignatureAttachment>
+			<cac:ExternalReference>
+				<cbc:URI>#signature20508622326</cbc:URI>
+			</cac:ExternalReference>
+		</cac:DigitalSignatureAttachment>
+	</cac:Signature>
+	<cac:AccountingSupplierParty>
+		<cbc:CustomerAssignedAccountID>20508622326</cbc:CustomerAssignedAccountID>
+		<cbc:AdditionalAccountID>6</cbc:AdditionalAccountID>
+		<cac:Party>
+			<cac:PartyName>
+				<cbc:Name><![CDATA[CORPORACION SLIN SAC]]></cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:ID>150131</cbc:ID>
+				<cbc:StreetName>CALLE CHACARILLA 250 SAN ISIDRO</cbc:StreetName>
+				<cbc:CitySubdivisionName>-</cbc:CitySubdivisionName>
+				<cbc:CityName>LIMA</cbc:CityName>
+				<cbc:CountrySubentity>LIMA</cbc:CountrySubentity>
+				<cbc:District>SAN ISIDRO</cbc:District>
+				<cac:Country>
+					<cbc:IdentificationCode>PE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName><![CDATA[CORPORACION SLIN SAC]]></cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cbc:CustomerAssignedAccountID>20382355751</cbc:CustomerAssignedAccountID>
+		<cbc:AdditionalAccountID>6</cbc:AdditionalAccountID>
+		<cac:Party>
+			<cac:PartyName>
+				<cbc:Name><![CDATA[CORPORACION TEXTIL IMPERIO DEL SOL S.A.]]></cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:ID></cbc:ID>
+				<cbc:StreetName>CAL. LAS LOMAS NRO. 870 URB. ZARATE LIMA - LIMA - SAN JUAN DE LURIGANCHO</cbc:StreetName>
+				<cbc:CitySubdivisionName>-</cbc:CitySubdivisionName>
+				<cbc:CityName></cbc:CityName>
+				<cbc:CountrySubentity></cbc:CountrySubentity>
+				<cbc:District></cbc:District>
+				<cac:Country>
+					<cbc:IdentificationCode>PE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName><![CDATA[CORPORACION TEXTIL IMPERIO DEL SOL S.A.]]></cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="USD">39.60</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxAmount currencyID="USD">39.60</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cac:TaxScheme>
+					<cbc:ID>1000</cbc:ID>
+					<cbc:Name>IGV</cbc:Name>
+					<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:PayableAmount currencyID="USD">259.60</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NIU">1.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="USD">220.00</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="USD">259.60</cbc:PriceAmount>
+				<cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="USD">39.60</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="USD">0.00</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="USD">39.60</cbc:TaxAmount>
+				<cbc:Percent>18.00</cbc:Percent>
+				<cac:TaxCategory>
+					<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description><![CDATA[DESARROLLO PUNTUAL DE 8 HORAS PARA EL TAREO Y REPORTE MINTRA.]]></cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID><![CDATA[8030300001]]></cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="USD">220.00</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>

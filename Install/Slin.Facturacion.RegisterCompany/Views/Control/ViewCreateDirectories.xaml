@@ -1,0 +1,66 @@
+﻿<Window x:Class="Slin.Facturacion.RegisterCompany.Views.Control.ViewCreateDirectories"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Slin.Facturacion.RegisterCompany.Views.Control"
+        mc:Ignorable="d"
+        Title="ADE - Administrador de Documentos Electrónicos" Height="655.642" Width="599" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowState="Normal">
+    <Grid>
+        <Label Name="lblTitle" Content="Configuración de Directorios" Background="Green" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Width="592"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="177" Margin="7,31,0,0" Stroke="SkyBlue" VerticalAlignment="Top" Width="571" />
+        <Label Content="Creación de Directorios" HorizontalAlignment="Left" Margin="20,36,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" />
+
+        <Label Content="Ruta para los Servicios Internos" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="20,67,0,0" VerticalAlignment="Top" />
+
+        <Label Content="Acronimo Empresa:" ToolTip="Ingrese un Acronimo con el nombre de la empresa para crear los servicios" HorizontalAlignment="Left" Margin="20,105,0,0" VerticalAlignment="Top" />
+        <TextBox Name="txtacronimo"  HorizontalAlignment="Left" Height="23" Margin="157,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="263"/>
+        <Label Content="Ruta Fisica SLIN-ADE:" HorizontalAlignment="Left" Margin="20,133,0,0" VerticalAlignment="Top" />
+        <TextBox Name="txtpathRoot" IsEnabled="False" HorizontalAlignment="Left" Margin="157,133,0,0" VerticalAlignment="Top" Width="263" Height="23"/>
+
+        <Label Content="Ruta del Cert. Digital:" HorizontalAlignment="Left" Margin="20,162,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="txtpath_certdigital" IsEnabled="False" HorizontalAlignment="Left" Margin="157,162,0,0" VerticalAlignment="Top" Width="234" Height="23"/>
+        <Button x:Name="btn_certdigital" IsEnabled="True" Content="..." FontWeight="SemiBold" FontSize="13" Background="Green" Foreground="White" HorizontalAlignment="Left" Margin="398,162,0,0" VerticalAlignment="Top" Width="21"  Height="22" Click="btn_certdigital_Click"/>
+
+        <Button x:Name="btnSelectHarkDesk" Content="Examinar" FontWeight="SemiBold" FontSize="13" Background="Green" Foreground="White" HorizontalAlignment="Left" Margin="446,105,0,0" VerticalAlignment="Top" Width="120"  Height="26" Click="btnSelectHarkDesk_Click" />
+        <Button x:Name="btnmovefiles" IsEnabled="False" Content="Copiar Archivos" FontWeight="SemiBold" FontSize="13" Background="Green" Foreground="White" HorizontalAlignment="Left" Margin="446,135,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="btnmovefiles_Click" />
+
+
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="362" Margin="7,211,0,0" Stroke="SkyBlue" VerticalAlignment="Top" Width="571" />
+        <Label Content="Rutas para los Sitios Web de SLIN-ADE" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="19,216,0,0" VerticalAlignment="Top" />
+
+
+        <Label Content="Ruta Fisica SLIN-ADE:" HorizontalAlignment="Left" Margin="20,249,0,0" VerticalAlignment="Top" />
+        <TextBox x:Name="txtpathRoot_app" IsEnabled="False" HorizontalAlignment="Left" Margin="157,249,0,0" VerticalAlignment="Top" Width="263" Height="23"/>
+        <Button x:Name="btnSelectHarkDesk_ade" IsEnabled="False" Content="Examinar" FontWeight="SemiBold" FontSize="13" Background="Green" Foreground="White" HorizontalAlignment="Left" Margin="446,246,0,0" VerticalAlignment="Top" Width="120"  Height="26" Click="btnSelectHarkDesk_ade_Click" />
+        <Button x:Name="btn_movefiles_ade" IsEnabled="False" Content="Copiar Archivos" FontWeight="SemiBold" FontSize="13" Background="Green" Foreground="White" HorizontalAlignment="Left" Margin="446,277,0,0" VerticalAlignment="Top" Width="120"  Height="27" Click="btn_movefiles_ade_Click"/>
+
+        <ListView x:Name="lstView_service" HorizontalAlignment="Left" Height="140" Margin="15,359,0,0" VerticalAlignment="Top" Width="553">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name App" Width="120" DisplayMemberBinding="{Binding Name}" />
+                    <!--<GridViewColumn Header="Puerto" Width="90" DisplayMemberBinding="{Binding Port}" />-->
+                    <GridViewColumn Header="Ubicación" Width="332" DisplayMemberBinding="{Binding Path}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Label Name="lblProgress" FontSize="15" Content="Loading..." FontWeight="SemiBold" HorizontalAlignment="Left" Margin="108,505,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,2.533" />
+        <ProgressBar Name="progressBar1" Maximum="100" Minimum="0" HorizontalAlignment="Left" Height="27" Margin="15,536,0,0" VerticalAlignment="Top" Width="549" RenderTransformOrigin="0.5,0.5">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+
+        <Button x:Name="btnNext" IsEnabled="False" Visibility="Hidden" Content="Next" FontWeight="SemiBold" FontSize="15" Background="Green" Foreground="White" HorizontalAlignment="Left" Margin="395,579,0,0" VerticalAlignment="Top" Width="86" Height="29" Click="btnNext_Click"/>
+        <Button IsEnabled="False" x:Name="btn_End" Content="Finalizar" FontWeight="SemiBold" FontSize="15" Background="Green" Foreground="White" HorizontalAlignment="Left" Margin="486,579,0,0" VerticalAlignment="Top" Width="86" Height="29" Click="btn_End_Click"/>
+        <Label Visibility="Hidden" x:Name="lbl_forinstaller" FontSize="15" Content="Apps Installed:" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="12,578,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,2.533" />
+        <Label Visibility="Hidden" x:Name="lbl_installed" FontSize="15" Content="0/0" FontWeight="SemiBold" HorizontalAlignment="Left" Margin="124,578,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,2.533" />
+
+    </Grid>
+</Window>

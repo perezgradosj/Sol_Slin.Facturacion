@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77A5587A-4A1E-42F7-A013-F1C91F6587F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slin.Facturacion.Install</RootNamespace>
+    <AssemblyName>Slin.Facturacion.Install</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>J:\publish_app\installer_fact\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>SLIN-ADE</ProductName>
+    <PublisherName>Corporación SLIN SAC</PublisherName>
+    <SuiteName>Sistema de Facturación Electrónica SLIN-ADE</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>Default.htm</WebPage>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>true</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B4AEA4A91015A89B0C00E5DE77768DE605C1A051</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Slin.Facturacion.Install_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LinqToExcel">
+      <HintPath>..\..\packages\LinqToExcel.1.10.1\lib\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.2.0.7\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.SqlServer.Scripting.11.0.2100.61\lib\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Remotion">
+      <HintPath>..\..\packages\LinqToExcel.1.10.1\lib\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq">
+      <HintPath>..\..\packages\LinqToExcel.1.10.1\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces">
+      <HintPath>..\..\packages\LinqToExcel.1.10.1\lib\Remotion.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPF.MDI">
+      <HintPath>..\..\Slin.Facturacion\Client\Library.Desktop\WPF.MDI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Children_One.xaml.cs">
+      <DependentUpon>Children_One.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainControl.xaml.cs">
+      <DependentUpon>MainControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Control\ViewDBSettings.xaml.cs">
+      <DependentUpon>ViewDBSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Control\ViewMailSettings.xaml.cs">
+      <DependentUpon>ViewMailSettings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Control\ViewCompanyData.xaml.cs">
+      <DependentUpon>ViewCompanyData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Control\ViewCreateDirectories.xaml.cs">
+      <DependentUpon>ViewCreateDirectories.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Control\ViewValidateServicesAdq.xaml.cs">
+      <DependentUpon>ViewValidateServicesAdq.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Test\ViewTestControlCE.xaml.cs">
+      <DependentUpon>ViewTestControlCE.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Children_One.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\Control\ViewDBSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Control\ViewMailSettings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Control\ViewCompanyData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Control\ViewCreateDirectories.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Control\ViewValidateServicesAdq.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Test\ViewTestControlCE.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Content Include="Files\ADE\serviceade\Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Files\ADE\serviceconsult\Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\ADE\serviceinterface\Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\ADE\slinade\Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Resource Include="Files\Excel\Config_Main.txt" />
+    <Content Include="Files\Script\Sql2012_port.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\BarcodeLib.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\itextsharp.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Slin.Facturacion.BusinessEntities.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Slin.Facturacion.BusinessSecurity.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Slin.Facturacion.Common.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Slin.Facturacion.DataAccess.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Slin.Facturacion.ProcessSend.exe" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Slin.Facturacion.Proxies.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Slin.Facturacion.ServiceImplementation.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\html\Default.html" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\BarcodeLib.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\itextsharp.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Slin.Facturacion.BusinessEntities.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Slin.Facturacion.BusinessSecurity.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Slin.Facturacion.Common.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Slin.Facturacion.DataAccess.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Slin.Facturacion.ProcessPrint.exe" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Slin.Facturacion.Proxies.dll" />
+    <Content Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Slin.Facturacion.ServiceImplementation.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\env\ADE.Services.SunatDelivery.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\SLIN-ADE\_ADE\res\ADE.Services.SummaryDelivery.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\SLIN-ADE\_ADE\smc\bin\Slin.Facturacion.WS_SendMailDoc.exe" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\BarcodeLib.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\itextsharp.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Microsoft.ReportViewer.WebForms.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\OpenPop.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.BusinessEntities.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.BusinessSecurity.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.Common.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.DataAccess.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.Proxies.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.ServiceImplementation.dll" />
+    <Content Include="Files\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.WS_FileDown.exe" />
+    <Content Include="Files\SLIN-ADE\_ADE\smp\bin\Slin.Facturacion.WS_PrintDoc.exe" />
+    <Content Include="Files\SLIN-ADE\_ADE\svc\ADE.Services.Monitor.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\bin\Slin.Facturacion.ProcessSend.exe.config" />
+    <None Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\bin\Slin.Facturacion.ProcessPrint.exe.config" />
+    <None Include="Files\SLIN-ADE\_ADE\smc\bin\Slin.Facturacion.WS_SendMailDoc.exe.config" />
+    <None Include="Files\SLIN-ADE\_ADE\smd\bin\Slin.Facturacion.WS_FileDown.exe.config" />
+    <None Include="Files\SLIN-ADE\_ADE\smp\bin\Slin.Facturacion.WS_PrintDoc.exe.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Slin.Facturacion.Install_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Img\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Document\Xml\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\EntradaCE\InterfERRO\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\EntradaCE\InterfPROC\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\EntradaCE\InterfSUC\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\EntradaCE\InterfTXT\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\EntradaCE\InterfXML\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\Librerias\crt\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\Logs\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ProcesoCE\CDR\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ProcesoCE\ENVIO\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ProcesoCE\ORD\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ProcesoCE\PDF417\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ProcesoCE\PDF\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ProcesoCE\XML\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\bin\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\env\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\Report\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smc\Report\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\smp\Report\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\Procesos\svc\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ReceivedCE\input_other\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ReceivedCE\input_pdf\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ReceivedCE\input_xml\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ReceivedCE\ins\" />
+    <Folder Include="Files\SLIN-ADE\REPLACE_ASYNC\ReceivedCE\nins\" />
+    <Folder Include="Files\SLIN-ADE\_ADE\in\" />
+    <Folder Include="Files\SLIN-ADE\_ADE\log\" />
+    <Folder Include="Files\SLIN-ADE\_ADE\smc\cds\" />
+    <Folder Include="Files\SLIN-ADE\_ADE\smp\prt\" />
+    <Folder Include="Logs\" />
+    <Folder Include="Views\AdeMonitor\" />
+    <Folder Include="Views\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Slin.Facturacion\Common\Slin.Facturacion.Common\Slin.Facturacion.Common.csproj">
+      <Project>{e7a2d1e6-5f1d-48b8-a728-476f5b8f6cee}</Project>
+      <Name>Slin.Facturacion.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Slin.Facturacion.InstallCommon\Slin.Facturacion.InstallCommon.csproj">
+      <Project>{4941c2dd-65ba-4822-b6f6-e827eaa2f71e}</Project>
+      <Name>Slin.Facturacion.InstallCommon</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Img\registr.png" />
+    <Resource Include="Resource\Img\install.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\Xml\Services.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\SLIN-ADE\REPLACE_ASYNC\Configuracion\MainConfig.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\Script\Sql2012_fact.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\SLIN-ADE\_ADE\env\ADE.Services.SunatDelivery.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\SLIN-ADE\_ADE\res\ADE.Services.SummaryDelivery.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Files\SLIN-ADE\_ADE\svc\ADE.Services.Monitor.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

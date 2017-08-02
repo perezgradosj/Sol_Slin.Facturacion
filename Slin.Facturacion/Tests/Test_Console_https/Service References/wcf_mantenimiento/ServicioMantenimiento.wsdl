@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IServicioMantenimiento_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://localhost/serviceade/ServicioMantenimiento.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://localhost/serviceade/ServicioMantenimiento.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://localhost/serviceade/ServicioMantenimiento.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Slin.Facturacion.BusinessEntities" />
+      <xsd:import schemaLocation="https://localhost/serviceade/ServicioMantenimiento.svc?xsd=xsd3" namespace="http://www.slin.com.pe" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServicioMantenimiento_GetListaSexo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaSexo" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaSexo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaSexoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaEstado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEstado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaEstado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaTipoDocumentoIdentidad_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaTipoDocumentoIdentidad" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaTipoDocumentoIdentidad_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaTipoDocumentoIdentidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaPais_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaPais" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaPais_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaPaisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaDepartamento_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDepartamento" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaDepartamento_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDepartamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaProvincia_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaProvincia" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaProvincia_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaProvinciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaDistrito_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDistrito" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaDistrito_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaDistritoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListadoEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListadoEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListadoEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListadoEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_RegistrarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_RegistrarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ActualizarEmpleado_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ActualizarEmpleado_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ValidarDniRuc_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarDniRuc" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ValidarDniRuc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarDniRucResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ValidarEmpresaRuc_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarEmpresaRuc" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ValidarEmpresaRuc_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarEmpresaRucResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_RegistrarEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_RegistrarEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistrarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ActualizarEmpresa_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEmpresa" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ActualizarEmpresa_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarEmpresaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetUbigeo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUbigeo" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetUbigeo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUbigeoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ValidarNroClienteExiste_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarNroClienteExiste" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ValidarNroClienteExiste_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarNroClienteExisteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_InsertarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_InsertarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ActualizarCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_ActualizarCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ActualizarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaCliente_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaCliente" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListaCliente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_Insert_CtaBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_CtaBank" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_Insert_CtaBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Insert_CtaBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_Update_CtaBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update_CtaBank" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_Update_CtaBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Update_CtaBankResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListBank_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListBank" />
+  </wsdl:message>
+  <wsdl:message name="IServicioMantenimiento_GetListBank_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListBankResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServicioMantenimiento">
+    <wsdl:operation name="GetListaSexo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaSexo" message="tns:IServicioMantenimiento_GetListaSexo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaSexoResponse" message="tns:IServicioMantenimiento_GetListaSexo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEstado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaEstado" message="tns:IServicioMantenimiento_GetListaEstado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaEstadoResponse" message="tns:IServicioMantenimiento_GetListaEstado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaEmpresa" message="tns:IServicioMantenimiento_GetListaEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaEmpresaResponse" message="tns:IServicioMantenimiento_GetListaEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaTipoDocumentoIdentidad">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaTipoDocumentoIdentidad" message="tns:IServicioMantenimiento_GetListaTipoDocumentoIdentidad_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaTipoDocumentoIdentidadResponse" message="tns:IServicioMantenimiento_GetListaTipoDocumentoIdentidad_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaPais">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaPais" message="tns:IServicioMantenimiento_GetListaPais_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaPaisResponse" message="tns:IServicioMantenimiento_GetListaPais_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDepartamento">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaDepartamento" message="tns:IServicioMantenimiento_GetListaDepartamento_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaDepartamentoResponse" message="tns:IServicioMantenimiento_GetListaDepartamento_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaProvincia">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaProvincia" message="tns:IServicioMantenimiento_GetListaProvincia_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaProvinciaResponse" message="tns:IServicioMantenimiento_GetListaProvincia_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDistrito">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaDistrito" message="tns:IServicioMantenimiento_GetListaDistrito_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaDistritoResponse" message="tns:IServicioMantenimiento_GetListaDistrito_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaEmpleado" message="tns:IServicioMantenimiento_GetListaEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaEmpleadoResponse" message="tns:IServicioMantenimiento_GetListaEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListadoEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListadoEmpresa" message="tns:IServicioMantenimiento_GetListadoEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListadoEmpresaResponse" message="tns:IServicioMantenimiento_GetListadoEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/RegistrarEmpleado" message="tns:IServicioMantenimiento_RegistrarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/RegistrarEmpleadoResponse" message="tns:IServicioMantenimiento_RegistrarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpleado">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/ActualizarEmpleado" message="tns:IServicioMantenimiento_ActualizarEmpleado_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/ActualizarEmpleadoResponse" message="tns:IServicioMantenimiento_ActualizarEmpleado_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDniRuc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/ValidarDniRuc" message="tns:IServicioMantenimiento_ValidarDniRuc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/ValidarDniRucResponse" message="tns:IServicioMantenimiento_ValidarDniRuc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarEmpresaRuc">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/ValidarEmpresaRuc" message="tns:IServicioMantenimiento_ValidarEmpresaRuc_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/ValidarEmpresaRucResponse" message="tns:IServicioMantenimiento_ValidarEmpresaRuc_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/RegistrarEmpresa" message="tns:IServicioMantenimiento_RegistrarEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/RegistrarEmpresaResponse" message="tns:IServicioMantenimiento_RegistrarEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpresa">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/ActualizarEmpresa" message="tns:IServicioMantenimiento_ActualizarEmpresa_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/ActualizarEmpresaResponse" message="tns:IServicioMantenimiento_ActualizarEmpresa_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUbigeo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetUbigeo" message="tns:IServicioMantenimiento_GetUbigeo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetUbigeoResponse" message="tns:IServicioMantenimiento_GetUbigeo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarNroClienteExiste">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/ValidarNroClienteExiste" message="tns:IServicioMantenimiento_ValidarNroClienteExiste_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/ValidarNroClienteExisteResponse" message="tns:IServicioMantenimiento_ValidarNroClienteExiste_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/InsertarCliente" message="tns:IServicioMantenimiento_InsertarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/InsertarClienteResponse" message="tns:IServicioMantenimiento_InsertarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/ActualizarCliente" message="tns:IServicioMantenimiento_ActualizarCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/ActualizarClienteResponse" message="tns:IServicioMantenimiento_ActualizarCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCliente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaCliente" message="tns:IServicioMantenimiento_GetListaCliente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListaClienteResponse" message="tns:IServicioMantenimiento_GetListaCliente_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CtaBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/Insert_CtaBank" message="tns:IServicioMantenimiento_Insert_CtaBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/Insert_CtaBankResponse" message="tns:IServicioMantenimiento_Insert_CtaBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_CtaBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/Update_CtaBank" message="tns:IServicioMantenimiento_Update_CtaBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/Update_CtaBankResponse" message="tns:IServicioMantenimiento_Update_CtaBank_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListBank">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListBank" message="tns:IServicioMantenimiento_GetListBank_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServicioMantenimiento/GetListBankResponse" message="tns:IServicioMantenimiento_GetListBank_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpsBinding_IServicioMantenimiento" type="tns:IServicioMantenimiento">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IServicioMantenimiento_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetListaSexo">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaSexo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEstado">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaTipoDocumentoIdentidad">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaTipoDocumentoIdentidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaPais">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaPais" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDepartamento">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaDepartamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaProvincia">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaProvincia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaDistrito">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaDistrito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListadoEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListadoEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/RegistrarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/ActualizarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarDniRuc">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/ValidarDniRuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarEmpresaRuc">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/ValidarEmpresaRuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/RegistrarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarEmpresa">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/ActualizarEmpresa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUbigeo">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetUbigeo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarNroClienteExiste">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/ValidarNroClienteExiste" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertarCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/InsertarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ActualizarCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/ActualizarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListaCliente">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_CtaBank">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/Insert_CtaBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_CtaBank">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/Update_CtaBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListBank">
+      <soap:operation soapAction="http://tempuri.org/IServicioMantenimiento/GetListBank" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>

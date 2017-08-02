@@ -1,0 +1,292 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="Slin.Facturacion.Electronica.Web.Site_Mobile" %>
+
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<%@ Import Namespace="Slin.Facturacion.Proxies.ServicioSeguridad" %>
+<%@ Import Namespace="System.Web" %>
+<%@ Import Namespace="Slin.Facturacion.Electronica.Web.ServiceFacturacion" %>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <%--<meta name="viewport" content="width=device-width" />--%>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> SLIN ADE</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+    <!--REFERENCE CODE-->
+
+    <link rel="stylesheet" href="Scripts/Other/lib/font-awesome/css/font-awesome.css">
+
+    <script type="text/javascript">
+        $(function () {
+            $(".knob").knob();
+        });
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="Scripts/Other/stylesheets/theme.css">
+    <link rel="stylesheet" type="text/css" href="Scripts/Other/stylesheets/premium.css">
+
+
+    <link href="Scripts/Calendar/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <script src="Scripts/Calendar/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!--END REFERENCE CODE -->
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+
+
+</head>
+<%--<body class="theme-6" style="background-color:white" onload="actualizaReloj()">--%>
+<body class="theme-6" style="background-color: white" onload="GenerarMenu()">
+    <form id="form1" runat="server">
+
+
+
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <header>
+
+
+            <!--JAVASCRIPT CODE-->
+            <script type="text/javascript">
+                $(function () {
+                    var match = document.cookie.match(new RegExp('color=([^;]+)'));
+                    if (match) var color = match[1];
+                    if (color) {
+                        $('body').removeClass(function (index, css) {
+                            return (css.match(/\btheme-\S+/g) || []).join(' ')
+                        })
+                        $('body').addClass('theme-' + color);
+                    }
+
+                    $('[data-popover="true"]').popover({ html: true });
+                });
+            </script>
+            <style type="text/css">
+                #line-chart {
+                    height: 300px;
+                    width: 800px;
+                    margin: 0px auto;
+                    margin-top: 1em;
+                }
+
+                .navbar-default .navbar-brand, .navbar-default .navbar-brand:hover {
+                    color: #fff;
+                }
+            </style>
+            <script type="text/javascript">
+                $(function () {
+                    var uls = $('.sidebar-nav > ul > *').clone();
+                    uls.addClass('visible-xs');
+                    $('#main-menu').append(uls.clone());
+                });
+            </script>
+            <!-- END -->
+
+            <%--<div class="navbar navbar-default" role="navigation" style="background-color:#248ad3">--%>
+            <div class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="" href="../../Views/Home/Inicio" style="font-size: 5px; font-family: Cambria"><span class="navbar-brand" style="text-align: left">
+                        <img runat="server" id="logoade" style="max-width: 250px;" /><label style="font-family: Cambria; font-size: medium; text-align: left">Administración de Documentos Electrónicos</label></span></a>
+
+                </div>
+
+                <div class="navbar-collapse collapse" style="height: 1px; font-family: Cambria;">
+
+                    <ul id="main-menu" class="nav navbar-nav navbar-right">
+
+                        <li class="dropdown hidden-xs">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <label style="font-size: small; text-align: center" id="Fecha_Reloj" hidden="hidden"></label>
+                                <span class="glyphicon glyphicon-user padding-right-small" style="position: relative; top: 3px;"></span>
+                                <label style="font-family: Cambria" id="txtuser" runat="server"></label>
+                                <i class="fa fa-caret-down"></i>
+                            </a>
+                            <ul class="dropdown-menu" id="menuser" runat="server">
+
+                                <li><a href="../../Views/Home/Profile" style="font-family: Cambria">Mis Datos</a></li>
+                                <li><a runat="server" id="CerrarSesion" onserverclick="CerrarSesion_ServerClick" tabindex="-1" style="font-family: Cambria">Cerrar Sesión</a></li>
+                                <li><a href="../../Views/Seguridad/CambiarClave" style="font-family: Cambria">Cambiar Contraseña</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- MENU VERTICAL ok -->
+
+        <div class="sidebar-nav" style="font-family: Cambria;">
+            <ul style="background-color: white !important">
+                <!-- MENU ITEM INICIO -->
+                <li runat="server" id="MenuInicio"><a href="#" data-target=".dashboard-menu" class="nav-header collapsed" data-toggle="collapse" style="font-family: Cambria;"><i class="fa fa-fw fa-home"></i>Inicio<i class="fa fa-collapse"></i></a></li>
+                <li>
+                    <ul class="dashboard-menu nav nav-list collapse" style="font-family: Cambria;">
+                        <li><a href="../../Views/Home/Inicio" class="theme-blue"><span class="fa fa-caret-right"> Inicio</span> </a></li>
+                        <li><a href="../../Views/Home/Profile" class="theme-blue"><span class="fa fa-caret-right"> Mis Datos</span></a></li>
+                        <li><a runat="server" id="CerrarSesion2" class="theme-blue" onserverclick="CerrarSesion_ServerClick" tabindex="-1"><span class="fa fa-caret-right"> Cerrar Sesión</span></a></li>
+                        <%--href="sign-in.html"--%>
+                        <li><a href="../../Views/Seguridad/CambiarClave" class="theme-blue" s style="font-family: Cambria"><span class="fa fa-caret-right"> Cambiar Contraseña</span></a></li>
+                    </ul>
+                </li>
+                <!--END MENU ITEM INICIO -->
+
+                <!-- MENU ITEM ENVIO-->
+                <li runat="server" id="MenuEnvio" visible="false"><a href="#" data-target=".legal-menu" class="nav-header collapsed" data-toggle="collapse" style="font-family: Cambria;"><i class="fa fa-fw fa-send"></i>Envío<i class="fa fa-collapse"></i></a></li>
+                <li>
+                    <ul class="legal-menu nav nav-list collapse" style="font-family: Cambria;">
+                        <li runat="server" id="EnvioDocumento" visible="false"><a href="../../Views/Envio/EnvioDocumento"><span class="fa fa-caret-right" runat="server" id="SpanEnvioDocumento"></span></a></li>
+                        <li runat="server" id="DocumentosEnviados" visible="false"><a href="../../Views/Envio/DocumentosEnviados"><span class="fa fa-caret-right" runat="server" id="SpanDocumentoEnviado"></span></a></li>
+                    </ul>
+                </li>
+                <!-- MENU ITEM ENVIO-->
+
+                <!-- MENU ITEM CONSULTA DE FACTURAS-->
+                <li runat="server" id="MenuConsultas" visible="false"><a href="#" data-target=".consultas-menu" class="nav-header collapsed" data-toggle="collapse" style="font-family: Cambria;"><i class="fa fa-fw fa-search"></i>Consultas<i class="fa fa-collapse"></i></a></li>
+                <li>
+                    <ul class="consultas-menu nav nav-list collapse" style="font-family: Cambria;">
+                        <li runat="server" id="ConsultaRC" visible="false"><a href="../../Views/Facturacion/ConsultaRC"><span class="fa fa-caret-right" runat="server" id="SpanConsultaResumenRC"></span></a></li>
+                        <li runat="server" id="ConsultaRA" visible="false"><a href="../../Views/Facturacion/ConsultaRA"><span class="fa fa-caret-right" runat="server" id="SpanConsultaResumenRA"></span></a></li>
+                        <li runat="server" id="ConsultaRR" visible="false"><a href="../../Views/Facturacion/ConsultaRR"><span class="fa fa-caret-right" runat="server" id="SpanConsultaResumenRR"></span></a></li>
+                        <li runat="server" id="DocumentosAnulados" visible="false"><a href="../../Views/Facturacion/DocumentosAnulados"><span class="fa fa-caret-right" runat="server" id="SpanConsultaDocumentoAnulado"></span></a></li>
+                        <li runat="server" id="ConsultaDocAnuladoSUNAT" visible="false"><a href="../../Views/Facturacion/ConsultaDocAnuladoSUNAT"><span class="fa fa-caret-right" runat="server" id="SpanConsultaDocAnuladoADE"></span></a></li>
+                        <li runat="server" id="ConsultaDocumento" visible="false"><a href="../../Views/Facturacion/ConsultaDocumento"><span class="fa fa-caret-right" runat="server" id="SpanConsultaDocumento"></span></a></li>
+                        <li runat="server" id="ConsultaDocumentoCRE" visible="false"><a href="../../Views/Facturacion/ConsultaDocumentoCRE"><span class="fa fa-caret-right" runat="server" id="SpanConsultaDocumentoCRE"></span></a></li>
+
+                        <li runat="server" id="ConsultaDocumentoRecibido" visible="false"><a href="../../Views/Facturacion/ConsultaDocumentoRecibido"><span class="fa fa-caret-right" runat="server" id="SpanConsultaDocumentoReceived"></span></a></li>
+                    </ul>
+                </li>
+                <!-- END CONSULTAS-->
+
+                <!-- MENU REGISTRO-->
+
+                <li runat="server" id="MenuRegistro" visible="false"><a href="#" data-target=".registro-menu" class="nav-header collapsed" data-toggle="collapse" style="font-family: Cambria;"><i class="fa fa-fw fa-database"></i>Registrar<i class="fa fa-collapse"></i></a></li>
+                <li>
+                    <ul class="registro-menu nav nav-list collapse" style="font-family: Cambria;">
+                        <li runat="server" id="AnularDocumento" visible="false"><a href="../../Views/Facturacion/AnularDocumento"><span class="fa fa-caret-right" runat="server" id="SpanAnularDocumento"></span></a></li>
+                    </ul>
+                </li>
+
+                <!-- END MENU REGISTRO-->
+
+
+                <!-- MENU ITEM SEGURIDAD-->
+                <li runat="server" id="MenuSeguridad" visible="false"><a href="#" data-target=".seguridad-menu" class="nav-header collapsed" data-toggle="collapse" style="font-family: Cambria;"><i class="fa fa-fw fa-lock"></i>Seguridad<i class="fa fa-collapse"></i></a></li>
+                <li>
+                    <ul class="seguridad-menu nav nav-list collapse" style="font-family: Cambria;">
+
+                        <li runat="server" id="RegistroUsuario" visible="false"><a href="../../Views/Mantenimiento/RegistroUsuario"><span class="fa fa-caret-right" runat="server" id="SpanRegistroUsuario"></span></a></li>
+                        <li runat="server" id="AsignarMenuPerfil" visible="false"><a href="../../Views/Seguridad/AsignarMenuPerfil"><span class="fa fa-caret-right" runat="server" id="SpanAsignarPerfiles"></span></a></li>
+                        <li runat="server" id="ListLogSeguridad" visible="false"><a href="../../Views/Seguridad/ListLogSeguridad"><span class="fa fa-caret-right" runat="server" id="SpanListLogSeguridad"></span></a></li>
+                    </ul>
+                </li>
+                <!-- END SEGURIDAD-->
+
+
+                <!-- MENU MANTENIMIENTO-->
+                <li runat="server" id="MenuMantenimiento" visible="false"><a href="#" data-target=".Mantenimiento-menu" class="nav-header collapsed" data-toggle="collapse" style="font-family: Cambria;"><i class="fa fa-fw fa-laptop"></i>Mantenimiento<i class="fa fa-collapse"></i></a></li>
+                <li>
+                    <ul class="Mantenimiento-menu nav nav-list collapse" style="font-family: Cambria;">
+                        <li runat="server" id="ListadoCorreo" visible="false"><a href="../../Views/Mantenimiento/ListadoCorreo"><span class="fa fa-caret-right" runat="server" id="SpanListadoCorreo"></span></a></li>
+                        <li runat="server" id="ListadoCliente" visible="false"><a href="../../Views/Mantenimiento/ListadoCliente"><span class="fa fa-caret-right" runat="server" id="SpanListadoCliente"></span></a></li>
+                        <li runat="server" id="ListaUsuarios" visible="false"><a href="../../Views/Mantenimiento/ListaUsuarios"><span class="fa fa-caret-right" runat="server" id="SpanListadoUsuario"></span></a></li>
+                        <li runat="server" id="ListadoEmpresa" visible="false"><a href="../../Views/Mantenimiento/ListadoEmpresa"><span class="fa fa-caret-right" runat="server" id="SpanListadoEmpresa"></span></a></li>
+                    </ul>
+                </li>
+                <!-- END MANTENIMIENTO-->
+
+                <!-- MENU ITEM CONFIGURACION-->
+                <li runat="server" id="MenuConfiguracion" visible="false"><a href="#" data-target=".accounts-menu" class="nav-header collapsed" data-toggle="collapse" style="font-family: Cambria;"><i class="fa fa-fw fa-briefcase"></i>Configuración<i class="fa fa-collapse"></i></a></li>
+                <li>
+                    <ul class="accounts-menu nav nav-list collapse" style="font-family: Cambria;">
+
+                        <li runat="server" id="ConfiguracionURL" visible="false"><a href="../../Views/Configuracion/ConfiguracionURL"><span class="fa fa-caret-right" runat="server" id="SpanConfiguracionURL"></span></a></li>
+                        <li runat="server" id="ConfiguracionEnvio" visible="false"><a href="../../Views/Configuracion/ConfiguracionEnvio"><span class="fa fa-caret-right" runat="server" id="SpanConfiguracionEnvio"></span></a></li>
+                        <li runat="server" id="ConfiguracionImpresion" visible="false"><a href="../../Views/Configuracion/ConfiguracionImpresion"><span class="fa fa-caret-right" runat="server" id="SpanConfiguracionImpresion"></span></a></li>
+                        <li runat="server" id="ConfiguracionAmbienteTrabj" visible="false"><a href="../../Views/Configuracion/ConfiguracionAmbienteTrabj"><span class="fa fa-caret-right" runat="server" id="SpanConfiguracionAmbienteTrabajo"></span></a></li>
+                        <li runat="server" id="ConfiguracionTimeService" visible="false"><a href="../../Views/Configuracion/ConfiguracionTimeService"><span class="fa fa-caret-right" runat="server" id="SpanConfiguracionTimeService"></span></a></li>
+                        <%--<li runat="server" id="ConfiguracionTipoCambio" visible="false"><a href="../../Views/Configuracion/ConfiguracionTipoCambio"><span runat="server" id="SpanConfiguracionTipoCambio" class="fa fa-caret-right"></span></a></li>--%>
+                    </ul>
+                </li>
+                <!--END MENU ITEM CONFIGURACION-->
+                
+
+                <li runat="server" id="MenuAjusteEmpresa" visible="false"><a href="#" data-target=".ajusteEmpresa-menu" class="nav-header collapsed" data-toggle="collapse" style="font-family: Cambria;"><i class="fa fa-fw fa-adjust"></i>Ajuste Empresa<i class="fa fa-collapse"></i></a></li>
+                <li>
+                    <ul class="ajusteEmpresa-menu nav nav-list collapse" style="font-family: Cambria;">
+                        <li runat="server" id="ChangeCompany" visible="false"><a href="../../Views/Seguridad/ChangeCompany"><span class="fa fa-caret-right" runat="server" id="SpanChangeCompany"></span></a></li>
+                    </ul>
+                </li>
+
+
+                <li><a href="#" class="nav-header" style="font-family: Cambria;"><i class="fa fa-fw fa-question-circle"></i>Ayuda</a></li>
+                <li>
+                    <label runat="server" id="lblExpiratoionDate_Cert" class="nav-header" style="font-family: Cambria;" visible="false"></label>
+                </li>
+                <li>
+                    <label runat="server" id="lblExpiratoionDate_Cert_red" class="nav-header" style="font-family: Cambria; color: red" visible="false"></label>
+                </li>
+            </ul>
+
+
+
+        </div>
+        <!-- END MENU VERTICAL ok -->
+
+        <%--<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>--%>
+        <div style="background-color: white; background-image: url(~/Img/home/fondo.jpg)">
+
+            <section class="content-wrapper main-content clear-fix" style="background-repeat: no-repeat; background-image: url(../../Img/home/fondopantalla.jpg); background-size: cover">
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            </section>
+        </div>
+        <hr />
+        <!-- END PIE DE PAGINA -->
+        <div style="bottom: auto; top: auto; right: auto; left: auto; position: relative; z-index: auto;">
+            <%--<footer>
+                    <p style="text-align:center"><a href="http://www.slin.com.pe">&copy; <%: DateTime.Now.Year %>- Corporación Slin</a></p>
+                </footer>--%>
+            <p style="text-align: center;"><a style="font-family: Cambria" href="#">&copy; <%: DateTime.Now.Year %> - SLIN/ADE</a></p>
+        </div>
+        <!-- END PIE DE PAGINA -->
+    </form>
+</body>
+</html>

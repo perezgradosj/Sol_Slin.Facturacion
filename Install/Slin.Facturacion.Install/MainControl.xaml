@@ -1,0 +1,60 @@
+﻿<Window x:Class="Slin.Facturacion.Install.MainControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mdi="clr-namespace:WPF.MDI;assembly=WPF.MDI"
+        Title="MAIN CONTROL" BorderBrush="Blue" Height="650" Width="1000" WindowState="Maximized" ResizeMode="CanResize" Background="Blue">
+    <Grid Background="White">
+
+        <DockPanel Background="White" RenderTransformOrigin="0.297,0.042">
+            <Menu Name="mnu" VerticalAlignment="Top" DockPanel.Dock="Top" Background="Green">
+                <MenuItem Name="mn_archive" Header="Archivo" FontSize="17" FontWeight="Bold" FontFamily="Candara">
+                    <MenuItem Name="mn_arc_one" Header="Save" FontSize="13" FontWeight="SemiBold" FontFamily="Candara" Click="MenuOne_Click"/>
+                    <MenuItem Name="mn_arc_two" Header="Save AS" FontSize="13" FontWeight="SemiBold" FontFamily="Candara"/>                    
+                </MenuItem>
+                <MenuItem Name="mn_edition" Header="Edición" FontSize="17" FontWeight="SemiBold" FontFamily="Candara">
+                    <MenuItem Name="mn_edit_one" Header="Editar" FontSize="13" FontWeight="SemiBold" FontFamily="Candara"/>
+                </MenuItem>
+                <MenuItem Name="mn_help" Header="Help" FontSize="17" FontWeight="Bold" FontFamily="Candara">
+                    <MenuItem Name="mn_help_one" Header="Sobre" FontSize="13" FontWeight="SemiBold" FontFamily="Candara"/>
+                </MenuItem>
+            </Menu>
+
+
+
+
+
+            <!--<Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Archivo">
+                    <MenuItem Name="MenuOne" Header="ADD" Click="MenuOne_Click" />
+                    <Separator />
+                    <MenuItem Header="EDIT"  />
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="ADD"  />
+                    <Separator />
+                    <MenuItem Header="EDIT"/>
+                </MenuItem>
+                <MenuItem Header="_Salir" ></MenuItem>
+            </Menu>-->
+            
+            
+            <mdi:MdiContainer Theme="Aero" DockPanel.Dock="Top" Margin="0,20,0,0" Name="MainMdiContainer"  >
+            </mdi:MdiContainer>
+            
+            
+        </DockPanel>
+
+        <!--<Button Name="btn_Install" Foreground="White" BorderThickness="0" Content="" Margin="81,76,818,447" Click="btn_Install_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Resource/Img/install.jpg"/>
+            </Button.Background>
+        </Button>
+
+        <Button Name="btn_Install_registr" Foreground="White" BorderThickness="0" Content="" Margin="81,215,829,312" Click="btn_Install_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="Resource/Img/registr.png"/>
+            </Button.Background>
+        </Button>-->
+
+    </Grid>
+</Window>

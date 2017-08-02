@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{752AA712-0FFD-4CC8-B0E9-B88244E4FF19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Slin.Facturacion.BusinessEntities</RootNamespace>
+    <AssemblyName>Slin.Facturacion.BusinessEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuracion\AmbienteSunat.cs" />
+    <Compile Include="Configuracion\AmbienteTrabjActual.cs" />
+    <Compile Include="Configuracion\DocumentoAmbiente.cs" />
+    <Compile Include="Configuracion\ListaAmbienteSunat.cs" />
+    <Compile Include="Configuracion\ListaDocumentoAmbiente.cs" />
+    <Compile Include="Configuracion\ListaURLAmbiente.cs" />
+    <Compile Include="Configuracion\Services.cs" />
+    <Compile Include="Configuracion\URLAmbiente.cs" />
+    <Compile Include="Country\Departamento.cs" />
+    <Compile Include="Country\Distrito.cs" />
+    <Compile Include="Country\ListaDepartamento.cs" />
+    <Compile Include="Country\ListaDistrito.cs" />
+    <Compile Include="Country\ListaPais.cs" />
+    <Compile Include="Country\ListaProvincia.cs" />
+    <Compile Include="Country\Pais.cs" />
+    <Compile Include="Country\Provincia.cs" />
+    <Compile Include="DocumentoIdentidad.cs" />
+    <Compile Include="Empleado.cs" />
+    <Compile Include="Empresa.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="Facturacion\Adicionales.cs" />
+    <Compile Include="Facturacion\Afectado.cs" />
+    <Compile Include="Facturacion\ArchivoXML.cs" />
+    <Compile Include="Facturacion\Cliente.cs" />
+    <Compile Include="Facturacion\DetalleFacturaElectronica.cs" />
+    <Compile Include="Facturacion\Documento.cs" />
+    <Compile Include="Facturacion\Emisor.cs" />
+    <Compile Include="Facturacion\EstadoEnvio.cs" />
+    <Compile Include="Facturacion\ExchangeRate.cs" />
+    <Compile Include="Facturacion\FacturaElectronica.cs" />
+    <Compile Include="Facturacion\ListaCliente.cs" />
+    <Compile Include="Facturacion\ListaDetalleFacturaElectronica.cs" />
+    <Compile Include="Facturacion\ListaDocumento.cs" />
+    <Compile Include="Facturacion\ListaEstadoProceso.cs" />
+    <Compile Include="Facturacion\ListaFacturaElectronica.cs" />
+    <Compile Include="Facturacion\ListaSerie.cs" />
+    <Compile Include="Facturacion\ListaTipoDocumento.cs" />
+    <Compile Include="Facturacion\Sede.cs" />
+    <Compile Include="Facturacion\Serie.cs" />
+    <Compile Include="Facturacion\TipoDocumento.cs" />
+    <Compile Include="Helper\ERegex.cs" />
+    <Compile Include="Helper\ExcelRead.cs" />
+    <Compile Include="IntefaceXMLCE\Invoice.cs" />
+    <Compile Include="InterfaceXMLCRE\Retention.cs" />
+    <Compile Include="InterfaceXMLNOTE\NoteClass.cs" />
+    <Compile Include="ListaEmpleados.cs" />
+    <Compile Include="ListaEmpresa.cs" />
+    <Compile Include="ListaEstado.cs" />
+    <Compile Include="ListaMoneda.cs" />
+    <Compile Include="ListaObjetos\ObjFacturaElectronico.cs" />
+    <Compile Include="ListaProducto.cs" />
+    <Compile Include="ListaTipoDocumentoIdentidad.cs" />
+    <Compile Include="ListaUbigeo.cs" />
+    <Compile Include="ListaUsuario.cs" />
+    <Compile Include="Lista\ListaSistemaEstado.cs" />
+    <Compile Include="Lista\SistemaEstado.cs" />
+    <Compile Include="Mail\Email.cs" />
+    <Compile Include="Mantenimiento\ListaSexo.cs" />
+    <Compile Include="Mantenimiento\Sexo.cs" />
+    <Compile Include="Moneda.cs" />
+    <Compile Include="Precio.cs" />
+    <Compile Include="Producto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\Bank.cs" />
+    <Compile Include="Seguridad\Correo.cs" />
+    <Compile Include="Seguridad\ListaCorreo.cs" />
+    <Compile Include="Seguridad\ListaMenu.cs" />
+    <Compile Include="Seguridad\ListaPerfil.cs" />
+    <Compile Include="Seguridad\ListaRol.cs" />
+    <Compile Include="Seguridad\ListaSum41.cs" />
+    <Compile Include="Seguridad\LogueoClass.cs" />
+    <Compile Include="Seguridad\Menu.cs" />
+    <Compile Include="Seguridad\Perfil.cs" />
+    <Compile Include="Seguridad\Rol.cs" />
+    <Compile Include="Seguridad\Sum41.cs" />
+    <Compile Include="TipoDocumentoIdentidad.cs" />
+    <Compile Include="TipoPrecio.cs" />
+    <Compile Include="Ubigeo.cs" />
+    <Compile Include="Usuario.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Installer\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

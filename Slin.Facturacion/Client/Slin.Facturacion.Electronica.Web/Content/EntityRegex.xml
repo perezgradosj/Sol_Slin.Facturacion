@@ -1,0 +1,26 @@
+<Utilxml>
+  <EntityRegex>
+    <ID>29</ID>
+    <Val>-</Val>
+  </EntityRegex>
+  <EntityRegex>
+    <ID>32</ID>
+    <Val>-</Val>
+  </EntityRegex>
+  <EntityRegex>
+    <ID>39</ID>
+    <Val>-</Val>
+  </EntityRegex>
+  <EntityRegex>
+    <ID>41</ID>
+    <Val>-</Val>
+  </EntityRegex>
+  <EntityRegex>
+    <ID>47</ID>
+    <Val>-</Val>
+  </EntityRegex>
+  <EntityRegex>
+    <ID>56</ID>
+    <Val>-</Val>
+  </EntityRegex>
+</Utilxml>

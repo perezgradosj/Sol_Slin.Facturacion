@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mainConfig>
+	<srv value="HOST_ARS"/>
+	<dbn value="DB_ARS"/>
+	<uid value="USER_ARS"/>
+	<pwd value="PWD_ARS"/>
+	
+	<cna value="US_CERT"/>
+	<cpa value="PWD_CERT"/>
+</mainConfig>

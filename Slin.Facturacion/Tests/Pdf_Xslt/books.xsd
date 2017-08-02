@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="books"
+    targetNamespace="http://tempuri.org/books.xsd"
+    elementFormDefault="qualified"
+    
+    xmlns:mstns="http://tempuri.org/books.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+</xs:schema>
+

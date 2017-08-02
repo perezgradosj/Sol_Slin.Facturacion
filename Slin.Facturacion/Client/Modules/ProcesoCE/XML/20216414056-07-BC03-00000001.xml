@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<CreditNote xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2">
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent><AdditionalInformationSLIN><Document><ID>20216414056-07-BC03-00000001</ID></Document><Extra><ExLinea>1</ExLinea><ExDato>Banco Scotiabank*b*Banco Interbank</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>2</ExLinea><ExDato>018-361-0361011562-62*b*127-3001260130</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>3</ExLinea><ExDato>00034396*b*127-3001260156</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>4</ExLinea><ExDato></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>5</ExLinea><ExDato></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>6</ExLinea><ExDato></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>7</ExLinea><ExDato></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>8</ExLinea><ExDato></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>9</ExLinea><ExDato>C*BC03-00000001</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>10</ExLinea><ExDato>05:40:47PM</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>11</ExLinea><ExDato>TIENDA CHANCAY</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>12</ExLinea><ExDato>CALLE LUIS FELIPE DEL SOLAR N 405 - CHANCAY - HUARAL*p*Telef: (511) 377-1412</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>13</ExLinea><ExDato>C55555</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>14</ExLinea><ExDato></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>15</ExLinea><ExDato>JESPINOZA</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>16</ExLinea><ExDato>028 JOSE REYES</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>17</ExLinea><ExDato>(511) 246-1577 / 246-0552</ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>18</ExLinea><ExDato></ExDato><ExTipo></ExTipo></Extra><Extra><ExLinea>19</ExLinea><ExDato></ExDato><ExTipo></ExTipo></Extra></AdditionalInformationSLIN></ext:ExtensionContent>
+    </ext:UBLExtension>
+    <ext:UBLExtension>
+      <ext:ExtensionContent><sac:AdditionalInformation><sac:AdditionalMonetaryTotal><cbc:ID>1001</cbc:ID><cbc:PayableAmount currencyID="PEN">11.44</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalMonetaryTotal><cbc:ID>1002</cbc:ID><cbc:PayableAmount currencyID="PEN">0.00</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalMonetaryTotal><cbc:ID>1003</cbc:ID><cbc:PayableAmount currencyID="PEN">0.00</cbc:PayableAmount></sac:AdditionalMonetaryTotal><sac:AdditionalProperty><cbc:ID>1000</cbc:ID><cbc:Value>TRECE Y 50/100 SOLES</cbc:Value></sac:AdditionalProperty></sac:AdditionalInformation></ext:ExtensionContent>
+    </ext:UBLExtension>
+    <ext:UBLExtension>
+      <ext:ExtensionContent><ds:Signature Id="SignatureSP"><SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>PokoMLsgusUysm41WttzTEVJmzk=</DigestValue></Reference></SignedInfo><SignatureValue xmlns="http://www.w3.org/2000/09/xmldsig#">Su2wDTLn93+8r/BqaMxaqWbZgl0ympSu5+aLgDLYv43XQOm9muD0tqc79ej9XppCCIHbVKbgpMX0ZyJZsRDqztn97Y+3frSX5uphQLenhauieT/Fe3F7zp7QBNq3nB1B/w3NLvqyEcwSkVPvO5RYL5kZ6EyrFjBPszUrixJQbBcHxqCzQkp/WadV6Eke/sQkq5Ju6tetgw6dSHfPDRpiuRNXVqJ9GJsYxmW4xYXQ+1O57n/mfz+Bbr+mps9x6fQv/bRPTVuurK9HBHG0wbjswPzOUYXl4hCa9BFrsZDLu60xaBVRjrIOB/DJKXiFHHORlHdyhCqBRmi1lirLb4Cz1A==</SignatureValue><KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#"><X509Data><X509SubjectName>CN=?ngel Alberto R?os Col?n + E=admin@tecniservices.net, OU=RUC: 20216414056, O=Tecni Services S.A.C., L=Huaral, S=Lima, C=PE</X509SubjectName><X509Certificate>MIIFcDCCBFigAwIBAgIRAJrGybHx3LHTAAAAAEw1a1kwDQYJKoZIhvcNAQELBQAwgaUxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1FbnRydXN0LCBJbmMuMTkwNwYDVQQLEzB3d3cuZW50cnVzdC5uZXQvQ1BTIGlzIGluY29ycG9yYXRlZCBieSByZWZlcmVuY2UxHzAdBgNVBAsTFihjKSAyMDEwIEVudHJ1c3QsIEluYy4xIjAgBgNVBAMTGUVudHJ1c3QgQ2xhc3MgMiBDbGllbnQgQ0EwHhcNMTYxMDIxMTcxMDIzWhcNMTcxMDIxMTc0MDIxWjCBtDELMAkGA1UEBhMCUEUxDTALBgNVBAgTBExpbWExDzANBgNVBAcTBkh1YXJhbDEeMBwGA1UEChMVVGVjbmkgU2VydmljZXMgUy5BLkMuMRkwFwYDVQQLExBSVUM6IDIwMjE2NDE0MDU2MUowIgYDVQQDDBvDgW5nZWwgQWxiZXJ0byBSw61vcyBDb2zDoW4wJAYJKoZIhvcNAQkBFhdhZG1pbkB0ZWNuaXNlcnZpY2VzLm5ldDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANe1xxHZRy7EmHUpsr0TlmfgrVXtWavBzWZlmU+4bE6zXWfIpcJcnpwjBx6chPI7izzFBrsmMv48IzmC6HR+SzknHvuR9HczAD7UhP9vnvHZAnaQ8WtM4ntzl1cgs+9RftJhq1f9157toG2DofWSFc4OL+//QPijwVP4nmmqFmGxNiJmNgq48UpeqVcZl88spJOdUm/oPSxXZbL5z3C4hJL30lQoPJypJbRuLvYmFUBpLQUEXtKTVUX+OWP4dl8kt1ndoKyUz7mt3tmMKISKVh35iDPIzvGlidfm0JgzV/eeAJG0fSyL5Z2hedRrTkQzNqiJwiS+pU06MKrk/MMjtHcCAwEAAaOCAYgwggGEMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwQgYDVR0gBDswOTA3BgtghkgBhvpsCgEEAjAoMCYGCCsGAQUFBwIBFhpodHRwOi8vd3d3LmVudHJ1c3QubmV0L3JwYTBqBggrBgEFBQcBAQReMFwwIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLmVudHJ1c3QubmV0MDUGCCsGAQUFBzAChilodHRwOi8vYWlhLmVudHJ1c3QubmV0LzIwNDhjbGFzczJzaGEyLmNlcjA0BgNVHR8ELTArMCmgJ6AlhiNodHRwOi8vY3JsLmVudHJ1c3QubmV0L2NsYXNzMmNhLmNybDAiBgNVHREEGzAZgRdhZG1pbkB0ZWNuaXNlcnZpY2VzLm5ldDAfBgNVHSMEGDAWgBQJkaW66fIuKnXfzX7+d8ry3mubJDAdBgNVHQ4EFgQUn0/+PrtL7Pz2tKpazh5FVDH5dX4wCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAQEAZb1cHfpf5EfpEh8BgSyQURiu4WyHavFDI/IO46/6aHxHg4vt9t0hgsrEGEr+00IO3XlbsRtcTedFDOi6sGSAYIuYP4tYFlVMW8K7QIrte8Q+ztD5TJitwfVXGLszhMsxFzrqrQ3B+F8ipSUIklJbL4bZa8nonzS3eLHyVpHSg2GuM6jUiT8IKCm4UF3lJ1t4YvP+/KA4WlkIkEuN22RS15qlWRVKjz8hQ1LRoG7wve2v0yOlkdfCkQNceBgHEUU5meaqmahZpuykzin3DwMZpwxzn5NwZwP1awjqTkuwQpJy7SlbfXg0gDkW3EvE38V3J+wRKgO7FEMJuoDzszhipA==</X509Certificate></X509Data></KeyInfo></ds:Signature></ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+  <cbc:CustomizationID>1.0</cbc:CustomizationID>
+  <cbc:ID>BC03-00000001</cbc:ID>
+  <cbc:IssueDate>2016-11-28</cbc:IssueDate>
+  <cbc:DocumentCurrencyCode>PEN</cbc:DocumentCurrencyCode>
+  <cac:DiscrepancyResponse>
+    <cbc:ReferenceID>004-00040362</cbc:ReferenceID>
+    <cbc:ResponseCode>09</cbc:ResponseCode>
+    <cbc:Description>Los precios se volvieron locos</cbc:Description>
+  </cac:DiscrepancyResponse>
+  <cac:BillingReference>
+    <cac:InvoiceDocumentReference>
+      <cbc:ID>004-00040362</cbc:ID>
+      <cbc:DocumentTypeCode>12</cbc:DocumentTypeCode>
+    </cac:InvoiceDocumentReference>
+  </cac:BillingReference>
+  <cac:Signature>
+    <cbc:ID>IDSign20216414056</cbc:ID>
+    <cac:SignatoryParty>
+      <cac:PartyIdentification>
+        <cbc:ID>20216414056</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name><![CDATA[TECNISERVICES]]></cbc:Name>
+      </cac:PartyName>
+    </cac:SignatoryParty>
+    <cac:DigitalSignatureAttachment>
+      <cac:ExternalReference>
+        <cbc:URI>#signature20216414056</cbc:URI>
+      </cac:ExternalReference>
+    </cac:DigitalSignatureAttachment>
+  </cac:Signature>
+  <cac:AccountingSupplierParty>
+    <cbc:CustomerAssignedAccountID>20216414056</cbc:CustomerAssignedAccountID>
+    <cbc:AdditionalAccountID>6</cbc:AdditionalAccountID>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name><![CDATA[TECNISERVICES]]></cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID>150601</cbc:ID>
+        <cbc:StreetName>AV CHANCAY NRO. 410-412 LIMA HUARAL HUARAL</cbc:StreetName>
+        <cbc:CitySubdivisionName>-</cbc:CitySubdivisionName>
+        <cbc:CityName>LIMA</cbc:CityName>
+        <cbc:CountrySubentity>LIMA</cbc:CountrySubentity>
+        <cbc:District>SAN ISIDRO</cbc:District>
+        <cac:Country>
+          <cbc:IdentificationCode>PE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName><![CDATA[TECNISERVICES]]></cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cbc:CustomerAssignedAccountID>0</cbc:CustomerAssignedAccountID>
+    <cbc:AdditionalAccountID>0</cbc:AdditionalAccountID>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name><![CDATA[CLIENTE MOSTRADOR]]></cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:ID></cbc:ID>
+        <cbc:StreetName>.</cbc:StreetName>
+        <cbc:CitySubdivisionName>-</cbc:CitySubdivisionName>
+        <cbc:CityName></cbc:CityName>
+        <cbc:CountrySubentity></cbc:CountrySubentity>
+        <cbc:District></cbc:District>
+        <cac:Country>
+          <cbc:IdentificationCode>PE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName><![CDATA[CLIENTE MOSTRADOR]]></cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="PEN">2.06</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxAmount currencyID="PEN">2.06</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cac:TaxScheme>
+          <cbc:ID>1000</cbc:ID>
+          <cbc:Name>IGV</cbc:Name>
+          <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:PayableAmount currencyID="PEN">13.50</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:CreditNoteLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:CreditedQuantity unitCode="NIU">3.00</cbc:CreditedQuantity>
+    <cbc:LineExtensionAmount currencyID="PEN">11.44</cbc:LineExtensionAmount>
+    <cac:PricingReference>
+      <cac:AlternativeConditionPrice>
+        <cbc:PriceAmount currencyID="PEN">4.50</cbc:PriceAmount>
+        <cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+      </cac:AlternativeConditionPrice>
+    </cac:PricingReference>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="PEN">13.50</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxAmount currencyID="PEN">13.50</cbc:TaxAmount>
+        <cbc:Percent>18.00</cbc:Percent>
+        <cac:TaxCategory>
+          <cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+          <cac:TaxScheme>
+            <cbc:ID>1000</cbc:ID>
+            <cbc:Name>IGV</cbc:Name>
+            <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Description><![CDATA[FRAGUA INTERIOR BEIGE X 1 KG CELIMA]]></cbc:Description>
+      <cac:SellersItemIdentification>
+        <cbc:ID><![CDATA[5020400244]]></cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="PEN">3.81</cbc:PriceAmount>
+    </cac:Price>
+  </cac:CreditNoteLine>
+</CreditNote>
